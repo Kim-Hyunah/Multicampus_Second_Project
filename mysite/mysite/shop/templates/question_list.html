@@ -1,0 +1,40 @@
+{% extends 'base2.html' %}
+{% block content %}
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-12 text-center">
+      <h1>  MySite's Shop Q&A </h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+<div class="row mt-5">
+  <div class="col-12">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">제목</th>
+          <th scope="col">작성일</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% if questions %}
+        {% for question in questions %}
+        <tr>
+          <td scope="row">{{ question.id }}</td>
+          <td>{{ question.subject }}</td>
+          <td>{{ question.create_date }}</td>
+        </tr>
+        {% endfor %}
+      {% else %}
+      <tr>
+          <td colspan="3"> 질문이 없습니다. </td>
+      </tr>
+      {% endif %}
+      </tbody>
+      </table>
+  </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <!-- App CSS -->
+     <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <title>Django 게시판, 로그인, 회원가입  기능 웹 프로젝트 </title>
+</head>
+<body>
+    <!-- 기본 템플릿 안에 삽입될 내용 Start -->
+   {% block content %}
+    <!--  base.html을 상속받는 템플릿에서 개별적으로 구현해야 하는 영역-->
+   {% endblock %}
+    <!-- 기본 템플릿 안에 삽입될 내용 End -->
+</body>
+</html>

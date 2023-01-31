@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-12 text-center">
+      <h1>  MySite's Shop Q&A </h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12 text-center">
+          <form method="POST" action="{% url 'shop:question_modify' question_id %}">
+              {% csrf_token %}
+              {{ form.as_p }}
+                  <button type="submit" class="btn btn-primary">질문 수정</button>
+          </form>
+        </div>
+        </div>
+</div>
+{% endblock %}

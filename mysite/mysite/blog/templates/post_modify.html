@@ -1,0 +1,53 @@
+{% extends 'base2.html' %}
+{% block content %}
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-12 text-center">
+      <h1>  MySite's Board(News) </h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12 text-center">
+          <form method="POST" action="/blog/update/" enctype="multipart/form-data">
+              {% csrf_token %}
+              <input
+                  type="hidden"
+                  class="form-control"
+                  name="post_id"
+                  value="{{post.id}}"
+                  />
+              <div class="form-group">
+              <label for="title"> 제목 </label>
+                  <input
+                type="text"
+                class="form-control"
+                id="title"
+                name="title"
+                value = "{{post.title}}"/>
+              </div>
+              <div class="form-group">
+                  <label for="title"> 내용 </label>
+                  <textarea class="form-control" rows="10" cols="100" name="content">{{post.content}}</textarea>
+              </div>
+              <div class="form-group">
+                  <label for="id_imgfile"> 파일 업로드 </label>
+                  <input
+                  type="file"
+                  class="form-control"
+                  id="id_imgfile"
+                  name="imgfile"
+                  accept="image/*"
+                  />
+              </div>
+              {% if post.imgfile %}
+                <img src="{{post.imgfile.url}}" style="width:180px; height:150px;" alt=""><br>
+                {% endif %}
+                  <button type="submit" class="btn btn-primary">글 수정 저장</button>
+          </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

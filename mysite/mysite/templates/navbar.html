@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary border-bottom">
+        <a class="navbar-brand" href="/">K-크롤러스</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="../../shop/">About <span class="sr-only">질문게시판</span></a>
+            </li>
+              <li class="nav-item active">
+              <a class="nav-link" href="../../blog/list/">
+                주간 프로젝트
+              </a>
+            <li class="nav-item">
+                {% if user.is_authenticated %}
+                <a class="nav-link" href="{% url 'common:logout' %}">{{user.username}} (로그아웃)</a>
+                {% else %}
+              <a class="nav-link" href="{% url 'common:login' %}">로그인</a>
+                {% endif %}
+            </li>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="../../blog/list">시계</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+              <li class="nav-item active">
+              <a class="nav-link" href="{% url 'common:signup' %}">회원가입<span class="sr-only">회원가입</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
