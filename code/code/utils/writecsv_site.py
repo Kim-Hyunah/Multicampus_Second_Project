@@ -10,7 +10,7 @@ def make_csv(list, SEARCH, site):
 
     with open(filename, 'w', encoding='utf-8', newline='')as f:
         writer = csv.writer(f)
-        writer.writerow(header)    # writerow : s 없어야 한줄로 헤더 써짐ㅋㅋㅋㅋㅋ
+        writer.writerow(header)    # writerow : s 없어야 한줄로 헤더 써짐
         writer.writerows(list)
     f.close()
 

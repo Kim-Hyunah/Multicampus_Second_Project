@@ -130,9 +130,6 @@ class idk():
                 review = spell_checker.check(review).checked
                 df.iloc[idx,1] = review
             
-            
-            
-            
         #  불용어 제거, 한글자 단어 제거 / noun
         for review in df['review']:
             document = ""
